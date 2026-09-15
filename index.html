@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#121212">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Niveau Bulle Pro</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="brand">Niveau Bulle Pro</div>
+    <div class="signature">Dev.Assamoi</div>
+  </header>
+
+  <main>
+    <div class="target-outer">
+      <div class="crosshair-h"></div>
+      <div class="crosshair-v"></div>
+      <div class="target-ring ring-outer"></div>
+      <div class="target-ring ring-mid"></div>
+      <div class="target-ring ring-center" id="ringCenter"></div>
+      <div class="bubble" id="bubble"></div>
+    </div>
+
+    <div class="display-card">
+      <div class="main-angle" id="mainAngleDisplay">0.0°</div>
+      <div class="axes-grid">
+        <div>Axe X (A-A) : <span class="axis-val" id="betaValue">0.0°</span></div>
+        <div>Axe Y (G-D) : <span class="axis-val" id="gammaValue">0.0°</span></div>
+      </div>
+    </div>
+
+    <div class="controls-group">
+      <button class="btn btn-primary" id="btnStart">Démarrer Capteurs</button>
+      <button class="btn btn-secondary" id="btnCalibrate">Étalonner (Tare)</button>
+      <button class="btn btn-icon active" id="btnAudioToggle" title="Bip Sonore">🔊</button>
+      <button class="btn btn-icon active" id="btnFlashToggle" title="Flash LED">⚡</button>
+    </div>
+  </main>
+
+  <footer>
+    Niveau de précision PWA • Fonctionne Hors-Ligne
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
