@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#121212">
+  <meta name="theme-color" content="#bae6fd">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>Niveau Bulle Pro</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
@@ -18,13 +18,22 @@
   </header>
 
   <main>
-    <div class="target-outer">
+    <div class="mode-badge" id="modeBadge">Mode : Détection automatique...</div>
+
+    <!-- 1. Cible Circulaire 2D (Mode Plat : Table / Sol) -->
+    <div class="target-outer" id="targetSurface">
       <div class="crosshair-h"></div>
       <div class="crosshair-v"></div>
       <div class="target-ring ring-outer"></div>
       <div class="target-ring ring-mid"></div>
       <div class="target-ring ring-center" id="ringCenter"></div>
-      <div class="bubble" id="bubble"></div>
+      <div class="bubble" id="bubbleSurface"></div>
+    </div>
+
+    <!-- 2. Tube Horizontal (Mode Mur : Tableau / Cadre) -->
+    <div class="tube-container" id="targetMur">
+      <div class="tube-center-marks"></div>
+      <div class="bubble" id="bubbleMur"></div>
     </div>
 
     <div class="display-card">
@@ -36,15 +45,16 @@
     </div>
 
     <div class="controls-group">
-      <button class="btn btn-primary" id="btnStart">Démarrer Capteurs</button>
-      <button class="btn btn-secondary" id="btnCalibrate">Étalonner (Tare)</button>
-      <button class="btn btn-icon active" id="btnAudioToggle" title="Bip Sonore">🔊</button>
+      <button class="btn btn-primary" id="btnStart">Démarrer</button>
+      <button class="btn btn-secondary" id="btnCalibrate">Étalonner</button>
+      <button class="btn btn-secondary" id="btnModeToggle" style="flex:none; padding:12px 10px;">🔄 Auto</button>
+      <button class="btn btn-icon active" id="btnAudioToggle" title="Son">🔊</button>
       <button class="btn btn-icon active" id="btnFlashToggle" title="Flash LED">⚡</button>
     </div>
   </main>
 
   <footer>
-    Niveau de précision PWA • Fonctionne Hors-Ligne
+    Niveau Eau PWA • BTP & Électricité • Dev.Assamoi
   </footer>
 
   <script src="app.js"></script>
